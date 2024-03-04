@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+       background:linear-gradient(135deg,#71b7e6,rgba(197, 7, 127, 0.6));
+            margin: 0;
+            padding: 0;
+    }
+    .container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.form-group textarea {
+    height: 100px;
+}
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
+
+Email.send {
+    Host : "smtp.elasticemail.com",
+    Username : "shaikmubinamubina02@gmail.com",
+    Password : "49F4BC1CB420520EBE0597ED498B89E4E49B",
+    To : 'shaikmubinamubina02@gmail.com',
+    From : "shaikmubinamubina02@gmail.com",
+    Subject : "This is the subject",
+    Body : "messagebody"
+}. then (
+  message => alert(message)
+);
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Email Form</h2>
+    <form action="#" method="post">
+        <div class="form-group">
+            <label for="name">  Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email"> Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Mobile No:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="message"> Send a Message:</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn">Submit</button>
+        </div>
+    
+    </form>
+</div>
+<script>
+if (name.trim() == '' || email.trim() == '' || message.trim() == '') {
+    alert('Please fill in all fields.');
+    return false;
+}
+
+// Simple email validation
+var emailRegex = /\S+@\S+\.\S+/;
+if (!emailRegex.test(email)) {
+    alert('Please enter a valid email address.');
+    return false;
+}
+
+return true;
+
+</script>
+
+</body>
+</html>
