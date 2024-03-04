@@ -4,6 +4,39 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Email Form</title>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script type="text/javascript">
+
+    function sendEmail() {
+
+        Email.send({
+
+            Host: "smtp.gmail.com",
+
+            Username: "shaikmubinamubina02@gmail.com",
+
+            Password: "83099559Mu@",
+
+            To: 'shaikmubinamubina02@gmail.com',
+
+            From: "shaikmubinamubina02@gmail.com",
+
+            Subject: "hiii",
+
+            Body: "Well that was easy!!",
+
+        })
+
+            .then(function (message) {
+
+                alert("mail sent successfully")
+
+            });
+
+    }
+
+</script>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -53,18 +86,6 @@
     background-color: #0056b3;
 }
 
-Email.send {
-    Host : "smtp.elasticemail.com",
-    Username : "shaikmubinamubina02@gmail.com",
-    Password : "49F4BC1CB420520EBE0597ED498B89E4E49B",
-    To : 'shaikmubinamubina02@gmail.com',
-    From : "shaikmubinamubina02@gmail.com",
-    Subject : "This is the subject",
-    Body : "messagebody"
-}. then (
-  message => alert(message)
-);
-
 </style>
 </head>
 <body>
@@ -94,22 +115,7 @@ Email.send {
     
     </form>
 </div>
-<script>
-if (name.trim() == '' || email.trim() == '' || message.trim() == '') {
-    alert('Please fill in all fields.');
-    return false;
-}
 
-// Simple email validation
-var emailRegex = /\S+@\S+\.\S+/;
-if (!emailRegex.test(email)) {
-    alert('Please enter a valid email address.');
-    return false;
-}
-
-return true;
-
-</script>
 
 </body>
 </html>
